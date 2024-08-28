@@ -62,11 +62,17 @@ npm start
 ## issue
  The contract function "createElection" reverted with the following reason:
  Internal JSON-RPC error.
+ 
 solution:
+
 with metamask 
+
 click on 3 dots on the right
+
 click on settings
+
 click on advance
+
 click on clear activity tab data
 
 # e-voting
