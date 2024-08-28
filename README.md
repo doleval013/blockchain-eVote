@@ -1,5 +1,7 @@
 # Getting Started
 
+can use scripts in scripts folder or do it manually
+
 # Setup Contracts
 
 ## install node_modules in contracts folder
@@ -56,3 +58,6 @@ npm start
 
 ```
 # e-voting
+
+# debug
+ validate contracts via https://remix.ethereum.org/
