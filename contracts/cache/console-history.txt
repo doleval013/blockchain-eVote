@@ -1,0 +1,9 @@
+console.log("Current block number:", blockNumber);
+blockNumber = await ethers.provider.getBlockNumber();
+console.log(blockNumber);
+blockNumber = await ethers.provider.getBlockNumber();
+const blockNumber = await ethers.provider.getBlockNumber();
+const currentNetwork = await ethers.provider.getNetwork();
+const network = await ethers.provider.getNetwork();
+exit
+const network = await ethers.provider.getNetwork();
