@@ -1,6 +1,14 @@
 # web
 
-https://blockchain-e-vote-l1noje4ax-doleval013s-projects.vercel.app/
+choose by testnet you prefer
+
+[localHost](https://blockchain-e-vote-local-32fsx600u-doleval013s-projects.vercel.app/)
+
+for local host you have to geenerate blocks and deploy contract
+
+[sepolia](https://blockchain-e-vote-sepolia-e57iq4wse-doleval013s-projects.vercel.app/)
+
+for sepolia you gave to have premissions 
 
 # Getting Started
 
