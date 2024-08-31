@@ -1,3 +1,3 @@
 cd ..\
 call npm install
-call set ENV=development & npm start
+call set REACT_APP_VERCEL_ENVIRONMENT=development & npm start

@@ -7,7 +7,7 @@ import { injected } from "wagmi/connectors";
 //  Get projectId
 const projectId = "3828bedc82f5ba0e923c413da3250b1a";
 
-const env = process.env.environment;
+const env = process.env.REACT_APP_VERCEL_ENVIRONMENT;
 console.log(env);
 console.log(process.env);
 console.log("condition: env === 'development' =", env === 'development');
