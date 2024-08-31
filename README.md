@@ -2,11 +2,11 @@
 
 choose by testnet you prefer
 
-[localHost](https://blockchain-e-vote-local-32fsx600u-doleval013s-projects.vercel.app/)
+[localHost](https://blockchain-e-vote.vercel.app/)
 
 for local host you have to geenerate blocks and deploy contract
 
-[sepolia](https://blockchain-e-vote-sepolia-e57iq4wse-doleval013s-projects.vercel.app/)
+[sepolia](https://blockchain-e-vote-sepolia.vercel.app/)
 
 for sepolia you gave to have premissions 
 
