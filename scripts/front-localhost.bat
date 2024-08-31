@@ -1,3 +1,3 @@
 cd ..\
 call npm install
-call set NODE_ENV=development & npm start
+call set ENV=development & npm start
