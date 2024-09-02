@@ -1,0 +1,7 @@
+Working with localhost network
+
+run local_blockchain.bat to generate keys for users (usually the same keys) and keep the bat running by not closing the cmd
+
+run deploy_contract.bat and keep the bat running by not closing cmd
+
+run front_localhost.bat and it will open the web after compilation and don't close the cmd

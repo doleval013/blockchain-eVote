@@ -4,7 +4,6 @@ import { keccak256, toBytes } from "viem";
 import { usePublicClient, useWriteContract } from "wagmi";
 import { useElectionContext } from "../context/electionContext";
 import { Evoting_ABI, Evoting_Address } from "../configs/contractConfigs";
-import { PagePath } from "../components/pagePath";
 import { ELECTION_STAGES } from "../lib/constants";
 import { shortenAddress } from "../lib/address";
 import toast from "react-hot-toast";
@@ -116,29 +115,26 @@ export const Election = () => {
     });
   };
   return (
-    <section>
-      <PagePath />
-
-      <div className="bg-gray-50 rounded-md p-5">
-        <div className="flex gap-10 flex-wrap">
+    <section className="p-6 bg-gray-300 min-h-screen">
+      <div className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 p-5 rounded-lg shadow-lg mb-6">
+        <div className="flex gap-10 flex-wrap text-gray-100">
           <span>
-            <h2 className="text-xl font-medium">Election Name</h2>
-            <p className="text-lg font-normal">{electionInfo.electionName}</p>
+            <h2 className="text-2xl font-semibold">Election Name</h2>
+            <p className="text-lg font-light">{electionInfo.electionName}</p>
           </span>
           <span>
-            <h2 className="text-xl font-medium">Election Stage</h2>
-            <p className="text-lg font-normal">
+            <h2 className="text-2xl font-semibold">Election Stage</h2>
+            <p className="text-lg font-light">
               {ELECTION_STAGES[electionInfo.stage]}
             </p>
           </span>
-
           <span>
-            <h2 className="text-xl font-medium">Candidates</h2>
-            <p className="text-lg font-normal">{candidates.length}</p>
+            <h2 className="text-2xl font-semibold">Candidates</h2>
+            <p className="text-lg font-light">{candidates.length}</p>
           </span>
           <span>
-            <h2 className="text-xl font-medium">Ends At</h2>
-            <p className="text-lg font-normal">
+            <h2 className="text-2xl font-semibold">Ends At</h2>
+            <p className="text-lg font-light">
               {electionInfo.stage === 1 &&
                 new Date(
                   parseInt(electionInfo.duration) * 1000
@@ -148,31 +144,28 @@ export const Election = () => {
           </span>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 space-y-4">
           {electionInfo.stage === 1 && (
-            <div>
-              <button
-                onClick={onEndElection}
-                className="text-white border border-indigo-600 bg-indigo-600 p-2 rounded-md disabled:bg-indigo-400"
-              >
-                End Election
-              </button>
-            </div>
+            <button
+              onClick={onEndElection}
+              className="w-full bg-gradient-to-r from-red-500 via-red-600 to-red-700 text-white p-3 rounded-md shadow-lg hover:bg-red-800 transition-transform transform hover:scale-105"
+            >
+              End Election
+            </button>
           )}
           {electionInfo.stage === 0 && (
-            <form onSubmit={onStartElection}>
+            <form onSubmit={onStartElection} className="flex space-x-3">
               <input
                 required
                 name="duration"
                 type="number"
-                className="border p-2 rounded-s-md outline-none focus:border-indigo-600 border-e-0 transition-all"
+                className="border border-gray-600 bg-gray-800 text-white p-3 rounded-md outline-none focus:border-yellow-500 transition-all"
                 placeholder="Duration in seconds"
               />
-
               <button
                 disabled={candidates.length === 0}
                 type="submit"
-                className="text-white border border-indigo-600 bg-indigo-600 p-2 rounded-e-md disabled:bg-indigo-400"
+                className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-white p-3 rounded-md shadow-lg hover:from-yellow-500 hover:to-yellow-700 transition-transform transform hover:scale-105"
               >
                 Start Election
               </button>
@@ -184,41 +177,41 @@ export const Election = () => {
       <ElectoinWinner electionId={id} isEnded={electionInfo.stage === 2} />
 
       {electionInfo.stage === 0 && (
-        <div className="bg-gray-50 rounded-md p-5 mt-10">
+        <div className="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 p-5 rounded-lg shadow-lg mt-10">
           <form
             onSubmit={onRegisterCandidate}
             className="grid grid-cols-12 gap-5"
           >
             <span className="flex flex-col col-span-12 md:col-span-6">
-              <label htmlFor="name">Candidate Name</label>
+              <label htmlFor="name" className="text-gray-300">Candidate Name</label>
               <input
                 id="name"
                 required
                 name="name"
                 type="text"
-                className="border p-2 rounded-md outline-none focus:border-indigo-600 transition-all"
+                className="border border-gray-600 bg-gray-800 text-white p-3 rounded-md outline-none focus:border-yellow-500 transition-all"
                 placeholder="Candidate Name"
               />
             </span>
             <span className="flex flex-col col-span-12 md:col-span-6">
-              <label htmlFor="party">Party Name</label>
+              <label htmlFor="party" className="text-gray-300">Party Name</label>
               <input
                 id="party"
                 required
                 name="party"
                 type="text"
-                className="border p-2 rounded-md outline-none focus:border-indigo-600 transition-all"
+                className="border border-gray-600 bg-gray-800 text-white p-3 rounded-md outline-none focus:border-yellow-500 transition-all"
                 placeholder="Party Name"
               />
             </span>
             <span className="flex flex-col col-span-12 md:col-span-6">
-              <label htmlFor="candidateId">Candidate Id</label>
+              <label htmlFor="candidateId" className="text-gray-300">Candidate Id</label>
               <input
                 id="candidateId"
                 required
                 name="candidateId"
                 type="text"
-                className="border p-2 rounded-md outline-none focus:border-indigo-600 transition-all"
+                className="border border-gray-600 bg-gray-800 text-white p-3 rounded-md outline-none focus:border-yellow-500 transition-all"
                 placeholder="Candidate Id"
               />
             </span>
@@ -226,7 +219,7 @@ export const Election = () => {
               <button
                 disabled={electionInfo.stage !== 0}
                 type="submit"
-                className="text-white border border-indigo-600 bg-indigo-600 p-2 rounded-md disabled:bg-indigo-400"
+                className="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-white p-3 rounded-md shadow-lg disabled:bg-yellow-400 hover:from-yellow-500 hover:to-yellow-700 transition-transform transform hover:scale-105"
               >
                 Register Candidate
               </button>
@@ -234,28 +227,29 @@ export const Election = () => {
           </form>
         </div>
       )}
+
       <div className="pb-10 mt-10">
-        <div className="flex p-6 bg-gray-50 rounded-md">
-          <h2 className="basis-1/3 text-xl font-medium">Candidate Id</h2>
-          <h2 className="basis-1/3 text-xl font-medium">Registration Id </h2>
-          <h2 className="basis-1/3 text-xl font-medium">Name</h2>
-          <h2 className="basis-1/3 text-xl font-medium">Party</h2>
-          <h2 className="basis-1/3 text-xl font-medium">Votes</h2>
+        <div className="flex p-6 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 rounded-lg shadow-lg mb-2">
+          <h2 className="basis-1/5 text-xl font-semibold text-gray-300">Candidate Id</h2>
+          <h2 className="basis-1/5 text-xl font-semibold text-gray-300">Registration Id</h2>
+          <h2 className="basis-1/5 text-xl font-semibold text-gray-300">Name</h2>
+          <h2 className="basis-1/5 text-xl font-semibold text-gray-300">Party</h2>
+          <h2 className="basis-1/5 text-xl font-semibold text-gray-300">Votes</h2>
         </div>
 
         <div>
           {candidates.map((candidate, idx) => (
             <div
-              className="flex py-4 px-6 even:bg-gray-50 rounded-md"
+              className="flex py-4 px-6 even:bg-gray-800 bg-gray-700 rounded-md shadow-lg mb-2"
               key={idx}
             >
-              <p className="basis-1/3">
+              <p className="basis-1/5 text-white">
                 {shortenAddress(candidate.candidateIdHash)}
               </p>
-              <p className="basis-1/3">{parseInt(candidate.regId)} </p>
-              <p className="basis-1/3">{candidate.name} </p>
-              <p className="basis-1/3">{candidate.party}</p>
-              <p className="basis-1/3">{parseInt(candidate.votes)}</p>
+              <p className="basis-1/5 text-white">{parseInt(candidate.regId)}</p>
+              <p className="basis-1/5 text-white">{candidate.name}</p>
+              <p className="basis-1/5 text-white">{candidate.party}</p>
+              <p className="basis-1/5 text-white">{parseInt(candidate.votes)}</p>
             </div>
           ))}
         </div>
