@@ -3,6 +3,7 @@
   "scripts": {
     "compile": "npx hardhat compile",
     "deploy:dev": "npx hardhat ignition deploy ./ignition/modules/Evoting.ts --network localhost",
+	"deploy:sep": "npx hardhat ignition deploy ./ignition/modules/Evoting.ts --network sepolia",
     "node": "npx hardhat node",
     "test": "npx hardhat test"
   },
