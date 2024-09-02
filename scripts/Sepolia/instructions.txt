@@ -1,0 +1,6 @@
+Working with localhost network
+
+run deploy_contract_sepolia.bat the connected account that send the contract will be the owner that create voting and give permissions.
+it will cost, make sure to have some sepolia eth money there.
+
+run front_localhost.bat and it will open the web after compilation and don't close the cmd
