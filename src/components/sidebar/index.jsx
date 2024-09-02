@@ -33,38 +33,39 @@ export const Sidebar = ({ paths = [] }) => {
     <aside
       ref={modalRef}
       className={cn(
-        "w-64 lg:h-screen min-w-[300px] flex flex-col h-screen bg-gray-100 fixed lg:sticky  bottom-0 top-0 overflow-y-auto p-8  z-50",
+        "w-72 lg:w-80 min-w-[300px] flex flex-col h-screen bg-gray-900 text-gray-100 fixed lg:sticky top-0 bottom-0 overflow-y-auto p-6 shadow-lg z-50 transition-transform duration-300",
         {
-          "animate-content-show left-0": isOpen,
-          "animate-content-hide -left-96": !isOpen,
+          "translate-x-0": isOpen,
+          "-translate-x-full": !isOpen,
         }
       )}
     >
-      <h2 className="text-2xl font-semibold italic">E-Voting</h2>
+      <h2 className="text-3xl font-bold mb-8 text-yellow-300">VoteSmart</h2>
 
-      <div className="border-y border-foreground/10 mt-8 py-3">
-        <h2 className="font-medium">Your Wallet Address:</h2>
-        <p className="text-foreground/60">
+      <div className="border-b border-gray-700 py-4 mb-6">
+        <h2 className="text-lg font-semibold">Your Wallet Address:</h2>
+        <p className="text-gray-400">
           {shortenAddress(address) || "NOT CONNECTED"}
         </p>
       </div>
 
-      <div className="mt-10 grid gap-5">
+      <div className="flex flex-col gap-4">
         {paths.map(({ href, path, icon }, idx) => (
           <Link
             to={href}
             key={idx}
             className={cn(
-              "group flex text-lg font-medium items-center gap-4 hover:bg-white rounded-md transition-all",
+              "group flex items-center gap-4 p-4 rounded-lg transition-colors duration-300",
               {
-                "bg-white": pathname.endsWith(href),
+                "bg-gray-700 text-gray-100": pathname.endsWith(href),
+                "hover:bg-gray-600 hover:text-gray-100": !pathname.endsWith(href),
               }
             )}
           >
-            <span className="group-hover:bg-primary/50 text-foreground p-2 rounded-md">
+            <span className="p-3 rounded-full transition-colors duration-300 group-hover:bg-indigo-600 group-hover:text-white">
               {icon}
             </span>
-            <p className="group-hover:text-foreground text-foreground/80">
+            <p className="text-lg font-medium">
               {path}
             </p>
           </Link>

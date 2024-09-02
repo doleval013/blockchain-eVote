@@ -8,9 +8,11 @@ import { injected } from "wagmi/connectors";
 const projectId = "3828bedc82f5ba0e923c413da3250b1a";
 
 const env = process.env.REACT_APP_VERCEL_ENVIRONMENT;
+
 console.log(env);
 console.log(process.env);
 console.log("condition: env === 'development' =", env === 'development');
+
 //export const chains = [{ ...localhost, id: 31337 }];
 export const chains = []; // Sepolia's Chain ID is 11155111
 if (env === "development") {

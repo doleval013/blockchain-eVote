@@ -1,8 +1,8 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "C:\\Users\\dolev\\Desktop\\blockchain\\as-is\\e-voting\\contracts\\contracts\\Evoting.sol": {
-      "lastModificationDate": 1724850154837,
+    "C:\\Users\\shira\\Desktop\\VoteSmart\\blockchain-eVote\\contracts\\contracts\\Evoting.sol": {
+      "lastModificationDate": 1725267673980,
       "contentHash": "aa69da6b7468412679792d2d9cca4c7f",
       "sourceName": "contracts/Evoting.sol",
       "solcConfig": {
@@ -41,8 +41,44 @@
         "Evoting"
       ]
     },
-    "C:\\Users\\dolev\\Desktop\\blockchain\\as-is\\e-voting\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
-      "lastModificationDate": 1724841648471,
+    "C:\\Users\\shira\\Desktop\\VoteSmart\\blockchain-eVote\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\Counters.sol": {
+      "lastModificationDate": 1725267823020,
+      "contentHash": "74654e3ae5d7f39555055dfe244dab7a",
+      "sourceName": "@openzeppelin/contracts/utils/Counters.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Counters"
+      ]
+    },
+    "C:\\Users\\shira\\Desktop\\VoteSmart\\blockchain-eVote\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol": {
+      "lastModificationDate": 1725267823015,
       "contentHash": "f07feb4a44b1a4872370da5aa70e8e46",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
@@ -77,8 +113,8 @@
         "Context"
       ]
     },
-    "C:\\Users\\dolev\\Desktop\\blockchain\\as-is\\e-voting\\contracts\\node_modules\\@openzeppelin\\contracts\\access\\AccessControl.sol": {
-      "lastModificationDate": 1724841648395,
+    "C:\\Users\\shira\\Desktop\\VoteSmart\\blockchain-eVote\\contracts\\node_modules\\@openzeppelin\\contracts\\access\\AccessControl.sol": {
+      "lastModificationDate": 1725267822939,
       "contentHash": "a2b1ec38a8dad325a596f926890772b8",
       "sourceName": "@openzeppelin/contracts/access/AccessControl.sol",
       "solcConfig": {
@@ -118,10 +154,10 @@
         "AccessControl"
       ]
     },
-    "C:\\Users\\dolev\\Desktop\\blockchain\\as-is\\e-voting\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\Counters.sol": {
-      "lastModificationDate": 1724841648475,
-      "contentHash": "74654e3ae5d7f39555055dfe244dab7a",
-      "sourceName": "@openzeppelin/contracts/utils/Counters.sol",
+    "C:\\Users\\shira\\Desktop\\VoteSmart\\blockchain-eVote\\contracts\\node_modules\\@openzeppelin\\contracts\\access\\IAccessControl.sol": {
+      "lastModificationDate": 1725267823334,
+      "contentHash": "57c84298234411cea19c7c284d86be8b",
+      "sourceName": "@openzeppelin/contracts/access/IAccessControl.sol",
       "solcConfig": {
         "version": "0.8.20",
         "settings": {
@@ -151,11 +187,11 @@
         "^0.8.0"
       ],
       "artifacts": [
-        "Counters"
+        "IAccessControl"
       ]
     },
-    "C:\\Users\\dolev\\Desktop\\blockchain\\as-is\\e-voting\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\Strings.sol": {
-      "lastModificationDate": 1724841649230,
+    "C:\\Users\\shira\\Desktop\\VoteSmart\\blockchain-eVote\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\Strings.sol": {
+      "lastModificationDate": 1725267823699,
       "contentHash": "48686fc32a22a3754b8e63321857dd2a",
       "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
       "solcConfig": {
@@ -193,44 +229,8 @@
         "Strings"
       ]
     },
-    "C:\\Users\\dolev\\Desktop\\blockchain\\as-is\\e-voting\\contracts\\node_modules\\@openzeppelin\\contracts\\access\\IAccessControl.sol": {
-      "lastModificationDate": 1724841648863,
-      "contentHash": "57c84298234411cea19c7c284d86be8b",
-      "sourceName": "@openzeppelin/contracts/access/IAccessControl.sol",
-      "solcConfig": {
-        "version": "0.8.20",
-        "settings": {
-          "evmVersion": "paris",
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IAccessControl"
-      ]
-    },
-    "C:\\Users\\dolev\\Desktop\\blockchain\\as-is\\e-voting\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\introspection\\ERC165.sol": {
-      "lastModificationDate": 1724841648615,
+    "C:\\Users\\shira\\Desktop\\VoteSmart\\blockchain-eVote\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\introspection\\ERC165.sol": {
+      "lastModificationDate": 1725267823138,
       "contentHash": "0e7db055ce108f9da7bb6686a00287c0",
       "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
       "solcConfig": {
@@ -267,8 +267,8 @@
         "ERC165"
       ]
     },
-    "C:\\Users\\dolev\\Desktop\\blockchain\\as-is\\e-voting\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SignedMath.sol": {
-      "lastModificationDate": 1724841649216,
+    "C:\\Users\\shira\\Desktop\\VoteSmart\\blockchain-eVote\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\math\\SignedMath.sol": {
+      "lastModificationDate": 1725267823687,
       "contentHash": "9488ebd4daacfee8ad04811600d7d061",
       "sourceName": "@openzeppelin/contracts/utils/math/SignedMath.sol",
       "solcConfig": {
@@ -303,8 +303,8 @@
         "SignedMath"
       ]
     },
-    "C:\\Users\\dolev\\Desktop\\blockchain\\as-is\\e-voting\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\math\\Math.sol": {
-      "lastModificationDate": 1724841649136,
+    "C:\\Users\\shira\\Desktop\\VoteSmart\\blockchain-eVote\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\math\\Math.sol": {
+      "lastModificationDate": 1725267823575,
       "contentHash": "fe63409d8a06818b926cf89e0ea88b1b",
       "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
       "solcConfig": {
@@ -339,8 +339,8 @@
         "Math"
       ]
     },
-    "C:\\Users\\dolev\\Desktop\\blockchain\\as-is\\e-voting\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\introspection\\IERC165.sol": {
-      "lastModificationDate": 1724841648942,
+    "C:\\Users\\shira\\Desktop\\VoteSmart\\blockchain-eVote\\contracts\\node_modules\\@openzeppelin\\contracts\\utils\\introspection\\IERC165.sol": {
+      "lastModificationDate": 1725267823420,
       "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
       "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
       "solcConfig": {

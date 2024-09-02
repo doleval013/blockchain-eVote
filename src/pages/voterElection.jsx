@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAccount, usePublicClient, useWriteContract } from "wagmi";
-import { PagePath } from "../components/pagePath";
 import { useElectionContext } from "../context/electionContext";
 import { ELECTION_STAGES } from "../lib/constants";
 import { shortenAddress } from "../lib/address";
@@ -67,33 +66,27 @@ export const VoterElection = () => {
   };
 
   return (
-    <section>
-      <PagePath />
-
-      <div className="bg-gray-50 rounded-md p-5">
-        <div className="flex gap-10 flex-wrap">
+    <section className="bg-gray-300 min-h-screen p-6">
+      <div className="bg-gray-800 rounded-lg p-6 shadow-lg mb-8 text-gray-100">
+        <div className="flex gap-12 flex-wrap">
           <span>
-            <h2 className="text-xl font-medium">Election Name</h2>
-            <p className="text-lg font-normal">{electionInfo.electionName}</p>
+            <h2 className="text-xl font-semibold">Election Name</h2>
+            <p className="text-lg">{electionInfo.electionName}</p>
           </span>
           <span>
-            <h2 className="text-xl font-medium">Election Stage</h2>
-            <p className="text-lg font-normal">
-              {ELECTION_STAGES[electionInfo.stage]}
-            </p>
+            <h2 className="text-xl font-semibold">Election Stage</h2>
+            <p className="text-lg">{ELECTION_STAGES[electionInfo.stage]}</p>
           </span>
 
           <span>
-            <h2 className="text-xl font-medium">Candidates</h2>
-            <p className="text-lg font-normal">{candidates.length}</p>
+            <h2 className="text-xl font-semibold">Candidates</h2>
+            <p className="text-lg">{candidates.length}</p>
           </span>
           <span>
-            <h2 className="text-xl font-medium">Ends At</h2>
-            <p className="text-lg font-normal">
+            <h2 className="text-xl font-semibold">Ends At</h2>
+            <p className="text-lg">
               {electionInfo.stage === 1 &&
-                new Date(
-                  parseInt(electionInfo.duration) * 1000
-                ).toLocaleString()}
+                new Date(parseInt(electionInfo.duration) * 1000).toLocaleString()}
               {electionInfo.stage !== 1 && "N/A"}
             </p>
           </span>
@@ -102,30 +95,28 @@ export const VoterElection = () => {
 
       <ElectoinWinner electionId={id} isEnded={electionInfo.stage === 2} />
 
-      <div className="my-10">
-        <div className="flex p-6 bg-gray-50 rounded-md">
-          <h2 className="basis-1/3 text-xl font-medium">Candidate Id</h2>
-          <h2 className="basis-1/3 text-xl font-medium">Registration Id </h2>
-          <h2 className="basis-1/3 text-xl font-medium">Name</h2>
-          <h2 className="basis-1/3 text-xl font-medium">Party</h2>
-          <h2 className="basis-1/3 text-xl font-medium">Votes</h2>
-          <span className="basis-1/3 " />
+      <div className="my-8">
+        <div className="flex p-6 bg-gray-800 rounded-lg text-gray-100 shadow-md mb-2">
+          <h2 className="basis-1/5 text-lg font-semibold">Candidate Id</h2>
+          <h2 className="basis-1/5 text-lg font-semibold">Registration Id</h2>
+          <h2 className="basis-1/5 text-lg font-semibold">Name</h2>
+          <h2 className="basis-1/5 text-lg font-semibold">Party</h2>
+          <h2 className="basis-1/5 text-lg font-semibold">Votes</h2>
+          <div className="basis-1/5" />
         </div>
 
         <div>
           {candidates.map((candidate, idx) => (
             <div
-              className="flex py-4 px-6 even:bg-gray-50 rounded-md"
+              className="flex py-4 px-6 mb-2 rounded-md bg-gray-800 text-gray-100 shadow-md hover:bg-gray-700 transition-transform transform hover:scale-105"
               key={idx}
             >
-              <p className="basis-1/3">
-                {shortenAddress(candidate.candidateIdHash)}
-              </p>
-              <p className="basis-1/3">{parseInt(candidate.regId)} </p>
-              <p className="basis-1/3">{candidate.name} </p>
-              <p className="basis-1/3">{candidate.party}</p>
-              <p className="basis-1/3">{parseInt(candidate.votes)}</p>
-              <div className="basis-1/3">
+              <p className="basis-1/5 truncate">{shortenAddress(candidate.candidateIdHash)}</p>
+              <p className="basis-1/5">{parseInt(candidate.regId)}</p>
+              <p className="basis-1/5">{candidate.name}</p>
+              <p className="basis-1/5">{candidate.party}</p>
+              <p className="basis-1/5">{parseInt(candidate.votes)}</p>
+              <div className="basis-1/5">
                 <button
                   onClick={onVote.bind(this, candidate.regId)}
                   disabled={voteStatus}

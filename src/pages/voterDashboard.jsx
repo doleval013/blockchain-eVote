@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { PagePath } from "../components/pagePath";
 import { useElectionsContext } from "../context/electionsContext";
 import { shortenAddress } from "../lib/address";
 import { keccak256, toBytes } from "viem";
@@ -13,23 +12,21 @@ export const VoterDashboard = () => {
     getElections();
   }, [getElections]);
   return (
-    <section>
-      <PagePath />
-
-      <div className="flex p-6 bg-gray-50 rounded-md">
-        <h2 className="basis-1/3 text-xl font-medium">Election Id</h2>
-        <h2 className="basis-1/3 text-xl font-medium">Election Name</h2>
-        <h2 className="basis-1/3 text-xl font-medium">Stage</h2>
+    <section className="p-6 bg-gray-300 min-h-screen">
+      <div className="flex p-6 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 rounded-lg shadow-lg mb-6 text-gray-100">
+        <h2 className="basis-1/3 text-xl font-semibold">Election Id</h2>
+        <h2 className="basis-1/3 text-xl font-semibold">Election Name</h2>
+        <h2 className="basis-1/3 text-xl font-semibold">Stage</h2>
       </div>
 
       <div>
         {elections.map((election, idx) => (
           <Link
             to={`/voter/election/${election.id}`}
-            className="flex py-4 px-6 even:bg-gray-50 rounded-md hover:bg-gray-100"
+            className="flex py-4 px-6 mb-2 rounded-md hover:bg-gradient-to-r from-gray-600 via-gray-700 to-gray-800 text-gray-100 bg-gray-800 transition-transform transform hover:scale-105 shadow-md"
             key={idx}
           >
-            <p className="basis-1/3 underline">
+            <p className="basis-1/3 truncate">
               {shortenAddress(keccak256(toBytes(parseInt(election.id))))}
             </p>
             <p className="basis-1/3">{election.electionName}</p>
